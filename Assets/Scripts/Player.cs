@@ -25,20 +25,10 @@ public class Player : MonoBehaviour
     {
         myTransform = GetComponent<Transform>();
         myBoxCollider = GetComponent<BoxCollider2D>();
-
-        flyOne = new GameObject();
-        flyTwo = new GameObject();
-        flyThree = new GameObject();
-        flyFour = new GameObject();
-        flyFive = new GameObject();
     }
 
     void PlantRotation()
     {
-        
-        // CHECKS THE Z ROTATION VALUE
-        myTransform.rotation = Quaternion.Euler(0, 0, playerRotationPosition); 
-
         // CHECKS MAXIMUM ROTATION LEFT
         if (playerRotationPosition == 90)
         {
@@ -53,16 +43,16 @@ public class Player : MonoBehaviour
         if (playerRotationPosition == -90)
         {
             hasRotationRight = false;
-        } 
+        }
         else
         {
             hasRotationRight = true;
         }
-        
+
         // PLAYER ROTATE LEFT
-        if (hasRotationLeft)
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (hasRotationLeft)
             {
                 myTransform.rotation = Quaternion.Euler(0, 0, playerRotationPosition + leftRotation);
                 playerRotationPosition = playerRotationPosition + leftRotation;
@@ -70,9 +60,9 @@ public class Player : MonoBehaviour
         }
 
         // PLAYER ROTATE RIGHT
-        if (hasRotationRight)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (hasRotationRight)
             {
                 myTransform.rotation = Quaternion.Euler(0, 0, playerRotationPosition + rightRotation);
                 playerRotationPosition = playerRotationPosition + rightRotation;
@@ -95,31 +85,36 @@ public class Player : MonoBehaviour
             if (playerRotationPosition == 0)
             {
                 myTransform.position = flyThree.transform.position;
+                
             }
 
             if (playerRotationPosition == 45)
             {
                 myTransform.position = flyTwo.transform.position;
+                
             }
 
             if (playerRotationPosition == 90)
             {
                 myTransform.position = flyOne.transform.position;
+                
             }
 
             if (playerRotationPosition == -45)
             {
                 myTransform.position = flyFour.transform.position;
+                
             }
 
             if (playerRotationPosition == -90)
             {
                 myTransform.position = flyFive.transform.position;
+               
             }
         }
     }
     
-    void FixedUpdate()
+    void Update()
     {
         PlantRotation();
         PlantAttack();
