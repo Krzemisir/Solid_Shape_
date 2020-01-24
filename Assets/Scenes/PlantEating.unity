@@ -777,6 +777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428275503}
   - component: {fileID: 1428275505}
+  - component: {fileID: 1428275506}
   - component: {fileID: 1428275504}
   m_Layer: 0
   m_Name: PlayerPlant
@@ -811,12 +812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f84c8501f35a724aa7b68e4a5a677e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyList:
-  - {fileID: 1078422479}
-  - {fileID: 299699406}
-  - {fileID: 1797649721}
-  - {fileID: 796016806}
-  - {fileID: 1560082714}
+  flyOne: {fileID: 1078422479}
+  flyTwo: {fileID: 299699406}
+  flyThree: {fileID: 1797649721}
+  flyFour: {fileID: 796016806}
+  flyFive: {fileID: 1560082714}
 --- !u!212 &1428275505
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -866,6 +866,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1428275506
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428275502}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.051308155, y: -0.05135387}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1333334, y: 2.1333334}
+    newSize: {x: 2.1333334, y: 2.1333334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2284441, y: 1.753759}
+  m_EdgeRadius: 0
 --- !u!1 &1450632448
 GameObject:
   m_ObjectHideFlags: 0
