@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                myTransform.position = 
+                 
             }
         }
     }

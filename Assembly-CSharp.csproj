@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A521D2EA-044E-9543-FF71-3FF611AB8F1D}</ProjectGuid>
+    <ProjectGuid>{C03B5D13-3D3C-BA0A-FDF6-A43E67990912}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,31 +59,31 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\SFX\SFXmanager.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Solid Shape/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/malms/OneDrive/Dokument/GitHub/Solid_Shape_/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
