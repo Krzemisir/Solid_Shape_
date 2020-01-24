@@ -63,9 +63,21 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    void PlantAttack()
+    {
+        if (playerPostition == 90)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                myTransform.position = 
+            }
+        }
+    }
     
     void Update()
     {
         PlantRotation();
+        PlantAttack();
     }
 }
