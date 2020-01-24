@@ -210,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299699407}
   - component: {fileID: 299699408}
+  - component: {fileID: 299699409}
   m_Layer: 0
   m_Name: Fly 2
   m_TagString: Untagged
@@ -280,6 +281,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &299699409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299699406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc40a021d1f0f2544883b1c44b34aea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyPos: {x: 0, y: 0, z: 0}
 --- !u!1 &637609581
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 796016807}
   - component: {fileID: 796016808}
+  - component: {fileID: 796016809}
   m_Layer: 0
   m_Name: Fly 4
   m_TagString: Untagged
@@ -531,6 +546,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &796016809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796016806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc40a021d1f0f2544883b1c44b34aea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyPos: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc40a021d1f0f2544883b1c44b34aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1280550502
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +811,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f84c8501f35a724aa7b68e4a5a677e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyList:
+  - {fileID: 1078422479}
+  - {fileID: 299699406}
+  - {fileID: 1797649721}
+  - {fileID: 796016806}
+  - {fileID: 1560082714}
 --- !u!212 &1428275505
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -921,6 +956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1560082715}
   - component: {fileID: 1560082716}
+  - component: {fileID: 1560082717}
   m_Layer: 0
   m_Name: Fly 5
   m_TagString: Untagged
@@ -991,6 +1027,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1560082717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560082714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc40a021d1f0f2544883b1c44b34aea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1797649721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797649722}
   - component: {fileID: 1797649723}
+  - component: {fileID: 1797649724}
   m_Layer: 0
   m_Name: Fly 3
   m_TagString: Untagged
@@ -1071,6 +1121,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1797649724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797649721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc40a021d1f0f2544883b1c44b34aea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1892322191
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Fly : MonoBehaviour
 {
-    private Transform flyTransform;
+    public Vector3 flyPos;
 
     void Start()
     {
-        flyTransform = GetComponent<Transform>();
+        flyPos = transform.position;
+        Debug.Log(flyPos);
     }
 
     void FlyPosition()

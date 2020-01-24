@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Fly.cs" />
+     <Compile Include="Assets\Scripts\FlyList.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\SFX\SFXmanager.cs" />
  <Reference Include="Unity.Timeline.Editor">

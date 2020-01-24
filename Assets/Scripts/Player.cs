@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Transform myTransform;
+    public List<GameObject> flyList;
 
     private float playerPostition = 0f;
     private float leftRotation = 45f;
@@ -13,9 +14,12 @@ public class Player : MonoBehaviour
     private bool hasRotationLeft = true;
     private bool hasRotationRight = true;
 
+
+
     void Start()
     {
         myTransform = GetComponent<Transform>();
+        flyList = new List<GameObject>();
     }
 
     void PlantRotation()
@@ -70,7 +74,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                 
+                
             }
         }
     }
