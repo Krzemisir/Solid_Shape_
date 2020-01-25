@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     private Transform myTransform;
     private BoxCollider2D myBoxCollider;
+    private Rigidbody2D myRigidbody;
     private Vector3 playerPosition = new Vector3(0, -2, 0);
 
     public GameObject flyOne;
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
     private float cooldown = 2f;
     private float attackStart = 0f;
 
+    private bool hasAttacked = false;
+    private bool isHitting = true;
     private bool canAttack = true;
     private bool canMove = true;
     private bool hasRotationLeft = true;
@@ -30,7 +33,25 @@ public class Player : MonoBehaviour
     {
         myTransform = GetComponent<Transform>();
         myBoxCollider = GetComponent<BoxCollider2D>();
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Fly"))
+        {
+            Debug.Log("Fly dead");
+        }
+    }
+
+
+    //void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Fly"))
+    //    {
+    //        Debug.Log("Fly missed");
+    //    }
+    //}
 
     void PlantRotation()
     {
