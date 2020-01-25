@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
     private float leftRotation = 45f;
     private float rightRotation = -45f;
 
+    private float cooldown = 2f;
+    private float attackStart = 0f;
+
+    private bool canAttack = true;
+    private bool canMove = true;
     private bool hasRotationLeft = true;
     private bool hasRotationRight = true;
 
@@ -50,7 +55,7 @@ public class Player : MonoBehaviour
         }
 
         // PLAYER ROTATE LEFT
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && canMove)
         {
             if (hasRotationLeft)
             {
@@ -60,7 +65,7 @@ public class Player : MonoBehaviour
         }
 
         // PLAYER ROTATE RIGHT
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && canMove)
         {
             if (hasRotationRight)
             {
@@ -72,44 +77,60 @@ public class Player : MonoBehaviour
 
     void PlantAttack()
     {
-        //float cooldown = 2f;
-        //float timeStamp = Time.time;
-
-        if (Input.GetKeyDown(KeyCode.G))
+        // PRESS SPACE TO ATTACK
+        if (Input.GetKeyDown(KeyCode.Space) && canAttack)
         {
-            myTransform.position = playerPosition;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+            // IF PLAYER HAS ROTATION VALUE 0
             if (playerRotationPosition == 0)
             {
                 myTransform.position = flyThree.transform.position;
-                
+                canMove = false;
+                canAttack = false;
             }
 
+            // IF PLAYER HAS ROTATION VALUE 45
             if (playerRotationPosition == 45)
             {
                 myTransform.position = flyTwo.transform.position;
-                
+                canMove = false;
+                canAttack = false;
             }
 
+            // IF PLAYER HAS ROTATION VALUE 90
             if (playerRotationPosition == 90)
             {
                 myTransform.position = flyOne.transform.position;
-                
+                canMove = false;
+                canAttack = false;
             }
 
+            // IF PLAYER HAS ROTATION VALUE -45
             if (playerRotationPosition == -45)
             {
                 myTransform.position = flyFour.transform.position;
-                
+                canMove = false;
+                canAttack = false;
             }
 
+            // IF PLAYER HAS ROTATION VALUE -90
             if (playerRotationPosition == -90)
             {
                 myTransform.position = flyFive.transform.position;
-               
+                canMove = false;
+                canAttack = false;
+            }
+        }
+
+        if (!canAttack)
+        {
+            // STARTS THE COOLDOWN
+            if (Time.time > attackStart + cooldown)
+            {
+                // RESETS POSITION AND ABLE TO ATTACK
+                attackStart = Time.time;
+                canMove = true;
+                myTransform.position = playerPosition;
+                canAttack = true;
             }
         }
     }
