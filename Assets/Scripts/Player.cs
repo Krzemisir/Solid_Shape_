@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     private bool hasRotationLeft = true;
     private bool hasRotationRight = true;
 
+    Animator plantAnimator;
+
     void Start()
     {
         myTransform = GetComponent<Transform>();
@@ -140,6 +142,10 @@ public class Player : MonoBehaviour
                 canMove = false;
                 canAttack = false;
             }
+
+            //PLAYS ANIMATION
+            plantAnimator = gameObject.GetComponent<Animator>();
+            plantAnimator.SetBool("isBiting", true);
         }
 
         if (!canAttack)
@@ -152,6 +158,8 @@ public class Player : MonoBehaviour
                 canMove = true;
                 myTransform.position = playerPosition;
                 canAttack = true;
+                plantAnimator = gameObject.GetComponent<Animator>();
+                plantAnimator.SetBool("isBiting", false);
             }
         }
     }

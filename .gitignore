@@ -15,3 +15,6 @@ Temp/ProcessJobs/ab30c7bcae888f8a20ac9ec5bfbfa3a6.bakert
 Temp/UnityLockfile
 Temp/UnityTempFile-eb492879210d8814793caf6c46a16348
 /Library
+/obj
+/Temp
+.vs/
