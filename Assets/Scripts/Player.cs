@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public GameObject flyFour;
     public GameObject flyFive;
 
+    public AudioSource chompSound;
+
     public static bool deadFly = false;
 
     private float playerRotationPosition = 0f;
@@ -165,7 +167,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Fly")
         {
             Debug.Log("Fly dead");
-            // INSERT EATING SOUND
+            chompSound.Play(); 
             other.gameObject.SetActive(false);
         }
     }
