@@ -163,12 +163,19 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
+        // SUCCESSFUL HIT
         if (other.gameObject.tag == "Fly")
         {
             Debug.Log("Fly dead");
             chompSound.Play(); 
             other.gameObject.SetActive(false);
+        }
+
+        // UNSUCCESSFUL HIT
+        if (other.gameObject.tag == "Miss")
+        {
+            Debug.Log("You Missed MF");
+            // ADD SOUND
         }
     }
 
