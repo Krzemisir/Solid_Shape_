@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public GameObject flyFour;
     public GameObject flyFive;
 
+    public static bool deadFly = false;
+
     private float playerRotationPosition = 0f;
     private float leftRotation = 45f;
     private float rightRotation = -45f;
@@ -22,8 +24,8 @@ public class Player : MonoBehaviour
     private float cooldown = 2f;
     private float attackStart = 0f;
 
-    private bool hasAttacked = false;
-    private bool isHitting = true;
+    //private bool hasAttacked = false;
+    //private bool isHitting = true;
     private bool canAttack = true;
     private bool canMove = true;
     private bool hasRotationLeft = true;
@@ -37,23 +39,6 @@ public class Player : MonoBehaviour
         myBoxCollider = GetComponent<BoxCollider2D>();
         myRigidbody = GetComponent<Rigidbody2D>();
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Fly"))
-        {
-            Debug.Log("Fly dead");
-        }
-    }
-
-
-    //void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Fly"))
-    //    {
-    //        Debug.Log("Fly missed");
-    //    }
-    //}
 
     void PlantRotation()
     {
@@ -109,6 +94,7 @@ public class Player : MonoBehaviour
                 myTransform.position = flyThree.transform.position;
                 canMove = false;
                 canAttack = false;
+
             }
 
             // IF PLAYER HAS ROTATION VALUE 45
@@ -143,7 +129,7 @@ public class Player : MonoBehaviour
                 canAttack = false;
             }
 
-            //PLAYS ANIMATION
+            // PLAYS ANIMATION
             plantAnimator = gameObject.GetComponent<Animator>();
             plantAnimator.SetBool("isBiting", true);
         }
@@ -155,9 +141,12 @@ public class Player : MonoBehaviour
             {
                 // RESETS POSITION AND ABLE TO ATTACK
                 attackStart = Time.time;
+
                 canMove = true;
-                myTransform.position = playerPosition;
                 canAttack = true;
+
+                myTransform.position = playerPosition;
+                
                 plantAnimator = gameObject.GetComponent<Animator>();
                 plantAnimator.SetBool("isBiting", false);
             }
@@ -169,4 +158,16 @@ public class Player : MonoBehaviour
         PlantRotation();
         PlantAttack();
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.tag == "Fly")
+        {
+            Debug.Log("Fly dead");
+            // INSERT EATING SOUND
+            other.gameObject.SetActive(false);
+        }
+    }
+
 }

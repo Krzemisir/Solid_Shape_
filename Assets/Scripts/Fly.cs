@@ -12,14 +12,8 @@ public class Fly : MonoBehaviour
         Debug.Log(flyPos);
     }
 
-    void FlyPosition()
-    {
-
-    }
-
-
     void Update()
     {
-        FlyPosition();
+
     }
 }
