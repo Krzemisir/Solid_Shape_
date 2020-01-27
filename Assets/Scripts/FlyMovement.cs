@@ -19,31 +19,27 @@ public class FlyMovement : MonoBehaviour
     public GameObject emptyFly4;
     public GameObject emptyFly5;
 
-    private int position;
+    int position;
+    bool waiting = false;
 
-    bool willMove = true;
-    float moveStart = 0f;
-    float cooldown = 2f;
+    public bool deadFly;
 
-    bool Delay()
+
+
+    IEnumerator Delay(int x) // wait for x seconds
     {
-        willMove = false;
-        Debug.Log("1st");
-        Debug.Log(Time.time); 
+        yield return new WaitForSeconds(x);
 
-        if (Time.time > 2f)
-        {
-            moveStart = Time.time;
-            return true;
-        }
-
-        return false;
+        waiting = false;
     }
 
-void Start()
+    void Start()
     {
         Time.timeScale = 1f;
-        position = Random.Range(6, 8);
+        StartCoroutine(Delay(2));
+
+
+        position = Random.Range(6, 8); //spawn the fly at a random position at top
 
         if (position == 6)
         {
@@ -58,16 +54,13 @@ void Start()
             fly8.SetActive(true);
         }
 
-
     }
 
     void Update()
     {
-        Delay();
-
-        if(Delay())
+        if (waiting == false) // the movement code is only being executed when the coroutine (the waiting time) is off
         {
-            if (fly8.activeSelf == true)
+            if (fly8.activeSelf == true) // check at what position is the fly and randomly move it to another position
             {
                 position = Random.Range(1, 3);
 
@@ -87,6 +80,9 @@ void Start()
                         break;
                 }
 
+                waiting = true; //wait for 2s
+
+                StartCoroutine(Delay(2));
             }
             else if (fly7.activeSelf == true)
             {
@@ -116,6 +112,9 @@ void Start()
                         break;
                 }
 
+                waiting = true;
+
+                StartCoroutine(Delay(2)); //wait for 2s
             }
             else if (fly6.activeSelf == true)
             {
@@ -137,6 +136,9 @@ void Start()
                         break;
                 }
 
+                waiting = true;
+
+                StartCoroutine(Delay(2)); //wait for 2s
             }
             else if (fly5.activeSelf == true)
             {
@@ -154,6 +156,9 @@ void Start()
                         fly3.SetActive(true);
                         break;
                 }
+
+                waiting = true;
+                StartCoroutine(Delay(2)); //wait for 2s
 
                 emptyFly5.SetActive(true);
 
@@ -182,6 +187,9 @@ void Start()
                         fly8.SetActive(true);
                         break;
                 }
+
+                waiting = true;
+                StartCoroutine(Delay(2)); //wait for 2s
 
                 emptyFly4.SetActive(true);
 
@@ -223,6 +231,9 @@ void Start()
                         break;
                 }
 
+                waiting = true;
+                StartCoroutine(Delay(2)); //wait for 2s
+
                 emptyFly3.SetActive(true);
 
             }
@@ -251,6 +262,9 @@ void Start()
                         break;
                 }
 
+                waiting = true;
+                StartCoroutine(Delay(2)); //wait for 2s
+
                 emptyFly2.SetActive(true);
 
             }
@@ -271,13 +285,15 @@ void Start()
                         break;
                 }
 
+                waiting = true;
+                StartCoroutine(Delay(2)); //wait for 2s
+
                 emptyFly1.SetActive(true);
 
             }
 
-            Delay();
         }
-
     }
+
 
 }

@@ -16,8 +16,10 @@ public class Player : MonoBehaviour
     public GameObject flyFive;
 
     public AudioSource chompSound;
+    public AudioSource missSound;
+    public AudioSource rotateSound;
 
-    public static bool deadFly = false;
+    public bool deadFly = false;
 
     private float playerRotationPosition = 0f;
     private float leftRotation = 45f;
@@ -69,6 +71,7 @@ public class Player : MonoBehaviour
         {
             if (hasRotationLeft)
             {
+                rotateSound.Play();
                 myTransform.rotation = Quaternion.Euler(0, 0, playerRotationPosition + leftRotation);
                 playerRotationPosition = playerRotationPosition + leftRotation;
             }
@@ -79,6 +82,7 @@ public class Player : MonoBehaviour
         {
             if (hasRotationRight)
             {
+                rotateSound.Play();
                 myTransform.rotation = Quaternion.Euler(0, 0, playerRotationPosition + rightRotation);
                 playerRotationPosition = playerRotationPosition + rightRotation;
             }
@@ -164,11 +168,14 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+
         // SUCCESSFUL HIT
         if (other.gameObject.tag == "Fly")
         {
             Debug.Log("Fly dead");
-            chompSound.Play(); 
+            chompSound.Play();
+            deadFly = true;
             other.gameObject.SetActive(false);
             plantAnimator = gameObject.GetComponent<Animator>();
             plantAnimator.SetBool("isBiting", true);
@@ -179,9 +186,10 @@ public class Player : MonoBehaviour
         {
             Debug.Log("You Missed MF");
             //Play Miss animation
+            missSound.Play();
             plantAnimator = gameObject.GetComponent<Animator>();
             plantAnimator.SetBool("isMissing", true);
-            // ADD SOUND
+
         }
     }
 
