@@ -132,8 +132,7 @@ public class Player : MonoBehaviour
             }
 
             // PLAYS ANIMATION
-            plantAnimator = gameObject.GetComponent<Animator>();
-            plantAnimator.SetBool("isBiting", true);
+
         }
 
         if (!canAttack)
@@ -149,8 +148,10 @@ public class Player : MonoBehaviour
 
                 myTransform.position = playerPosition;
                 
+                //RESETS ANIMATION
                 plantAnimator = gameObject.GetComponent<Animator>();
                 plantAnimator.SetBool("isBiting", false);
+                plantAnimator.SetBool("isMissing", false);
             }
         }
     }
@@ -169,12 +170,17 @@ public class Player : MonoBehaviour
             Debug.Log("Fly dead");
             chompSound.Play(); 
             other.gameObject.SetActive(false);
+            plantAnimator = gameObject.GetComponent<Animator>();
+            plantAnimator.SetBool("isBiting", true);
         }
 
         // UNSUCCESSFUL HIT
         if (other.gameObject.tag == "Miss")
         {
             Debug.Log("You Missed MF");
+            //Play Miss animation
+            plantAnimator = gameObject.GetComponent<Animator>();
+            plantAnimator.SetBool("isMissing", true);
             // ADD SOUND
         }
     }
